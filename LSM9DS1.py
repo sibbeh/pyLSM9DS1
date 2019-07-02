@@ -120,12 +120,12 @@ class IMU:
     # Reads and calibrates the accelerometer values into Gs
     def read_accel(self):
         cal = self.XM.CAL_A[self.selected_a_range]
-        self.ax, self.ay, self.az = read3axis(self.I2CPort, self.XM.ADDRESS, self.XM.OUT_X_L_XL, cal)
+        self.ax, self.ay, self.az = read3axis(self.bus, self.XM.ADDRESS, self.XM.OUT_X_L_XL, cal)
     
     # Reads and calibrates the mag values into Gauss
     def read_mag(self):
         cal = self.MA.CAL_M[self.selected_m_range]
-        self.mx, self.my, self.mz = read3axis(self.I2CPort, self.MA.ADDRESS, self.MA.OUT_X_L_M, cal) 
+        self.mx, self.my, self.mz = read3axis(self.bus, self.MA.ADDRESS, self.MA.OUT_X_L_M, cal) 
     
     # Reads and calibrates the gyro values into degrees per second
     def read_gyro(self):
