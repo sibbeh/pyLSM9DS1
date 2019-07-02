@@ -20,6 +20,7 @@ parts/
 sdist/
 var/
 bin/
+.vscode/
 wheels/
 *.egg-info/
 .installed.cfg
